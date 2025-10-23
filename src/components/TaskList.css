@@ -1,0 +1,48 @@
+.task-list-container {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Custom scrollbar for task list */
+.task-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-list-container::-webkit-scrollbar-track {
+  background: #f1f3f4;
+  border-radius: 3px;
+}
+
+.task-list-container::-webkit-scrollbar-thumb {
+  background: #c1c8cd;
+  border-radius: 3px;
+}
+
+.task-list-container::-webkit-scrollbar-thumb:hover {
+  background: #a8b2ba;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .task-list-container {
+    max-height: 500px;
+    padding-right: 2px;
+  }
+  
+  .task-list {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-list-container {
+    max-height: 400px;
+  }
+}

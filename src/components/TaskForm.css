@@ -1,0 +1,145 @@
+.task-form-container {
+  margin-bottom: 2rem;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.task-input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: white;
+  transition: all 0.2s ease;
+  min-height: 50px;
+}
+
+.task-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  outline: none;
+}
+
+.task-input:disabled {
+  background: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.task-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.add-button {
+  padding: 0 1.25rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.add-button:active {
+  transform: translateY(0);
+}
+
+.add-button:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.add-button i {
+  font-size: 1.1rem;
+}
+
+.input-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.char-count {
+  font-weight: 500;
+}
+
+.hint {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Loading animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .task-input {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .add-button {
+    padding: 0 1rem;
+    min-width: 45px;
+  }
+  
+  .input-meta {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .add-button {
+    padding: 0.875rem;
+    align-self: stretch;
+  }
+  
+  .hint {
+    display: none;
+  }
+}
